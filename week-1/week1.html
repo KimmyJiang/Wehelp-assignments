@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+        <title> Week 1 </title>
+
+        <style type="text/css">
+             @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap');
+
+            body {
+                font-family: 'Noto Sans TC', sans-serif;
+                margin: 0px;
+            
+             }
+            
+            nav {
+                display: flex;
+                padding: 5px;
+                font-size: 20px;
+                height: 30px;
+            }
+
+            .left {
+                flex:none;
+                width: 150px;
+            }
+
+            .right {
+                flex:auto;
+                justify-content: flex-end;  
+                display: flex;
+            }
+
+            .item { 
+                flex:none;
+                width:100px;
+                text-align:center;
+        
+            }
+
+            .menu {
+                padding-top: 2px;
+                width: 30px;
+                height: 90%;
+            }
+
+            .head {
+                height:300px;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(245, 228, 198);
+                font-weight:bold;
+            }
+
+
+            .gallery {
+                width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;  
+            }
+
+            .box {
+                flex:none;
+                width: 280px;
+                margin: 10px;
+                background: rgb(245, 228, 198);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            img {
+                width:100%;
+                margin-bottom: 0px;
+            }
+
+            .text {
+                width: 100%;
+                font-size: 20px;
+                height: 50px;
+                margin-top: auto;
+                margin-bottom: auto;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            @media screen and (max-width:1200px) {
+                .gallery {
+                    width: 90%;
+                }
+
+                .box {
+                    width: 45%;
+                }
+                
+            }
+
+            @media screen and (min-width: 601px) {
+                .menu {
+                    display: none;
+                }
+  
+            }
+
+            @media screen and (max-width: 600px) {
+                
+                .gallery {
+                    width: 90%;
+                }
+                
+                .box {
+                    width: 90%;
+                }
+
+                .item {
+                    display: none;
+
+                }
+
+            }
+
+        </style>
+
+    </head>
+ 
+    <body>
+        <nav class="title">
+            <div class="left">
+                My Website
+            </div>
+            <div class="right">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <img class="menu" src="https://cdn1.iconfinder.com/data/icons/jumpicon-basic-ui-glyph-1/32/-_Hamburger-Menu-More-Navigation--256.png"/>
+            </div>
+            
+        </nav>
+
+        <div class="head">
+            Welcome to My Home
+        </div>
+        
+        <div class="gallery">
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 1</div>
+            </div>
+          
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 2</div>
+            </div>
+          
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 3</div>
+            </div>
+          
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 4</div>
+            </div>
+          
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 5</div>
+            </div>
+          
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 6</div>
+            </div>
+          
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 7</div>
+            </div>
+          
+            <div class="box">
+                <img src="view.jpeg"/>
+                <div class="text">Title 8</div>
+            </div>
+          
+        </div>
+          
+    </body>
+</html>
