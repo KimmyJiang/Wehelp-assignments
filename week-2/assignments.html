@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <title>assigments</title>
+    <script type="text/Javascript">
+
+        // assignment 1
+
+        function calculate(min, max){
+            var i = min;
+            var sum = 0;
+            while(i <= max ){
+                sum += i;
+                i++;
+            }
+            return sum;
+        }
+
+        // 呼叫 calculate 函式
+
+        calculate(1, 3); // 你的程式要能夠計算 1+2+3，最後印出 6
+        calculate(4, 8); // 你的程式要能夠計算 4+5+6+7+8，最後印出 30
+
+        // assignment 2
+
+        function avg(data){
+            var sum = 0;
+            var i = 0;
+            while ( i < data["count"] ) {
+                sum += data["employees"][i]["salary"];
+                i++;
+            }
+            return sum / data["count"];
+        }
+
+        // 呼叫 avg 函式
+
+        avg({
+        "count":3,
+        "employees":[ {
+        "name":"John",
+        "salary":30000 },
+        {
+        "name":"Bob",
+        "salary":60000 },
+        {
+        "name":"Jenny",
+        "salary":50000 }
+        ]
+        });
+
+        // assignment 3
+
+        function maxProduct(nums){
+            var result = nums[0] * nums[1];
+
+            for ( var i=0 ; i < nums.length ; i++ ){
+                for ( var j=i+1 ; j < nums.length ; j++ ){
+                    if ( nums[i] * nums[j] > result){
+                        result = nums[i] * nums[j];
+                    }
+                }
+            }
+            return result;
+        }
+
+        // 呼叫 maxProduct 函式
+
+
+        maxProduct([5, 20, 2, 6]) // 得到 120 
+        maxProduct([10, -20, 0, 3]) // 得到 30 
+        maxProduct([-1, 2]) // 得到 -2 
+        maxProduct([-1, 0, 2]) // 得到 0 
+        maxProduct([-1, -2, 0]) // 得到 2
+
+        // assignment 4
+
+        function twoSum(nums, target){
+            var sum = target;
+            var element = [];
+            for (i=0 ; i < nums.length ; i ++ ){
+                for (j=i+1 ; j < nums.length ; j++){
+                    if ( nums[i] + nums[j] == sum ){
+                        element.push(i,j);
+                        break;
+                    }
+                }
+            }
+            return element ;
+        }
+
+        // 呼叫 twoSum 函式
+
+        let result=twoSum([2, 11, 7, 15], 9);
+        console.log(result); // show [0, 2] because nums[0]+nums[2] is 9
+
+        // assignment 5
+
+        function maxZeros(nums){
+            var count = 0 ;
+            var max = 0 ;
+            for (i=0 ; i < nums.length ; i++ ){
+                if ( nums[i] == 0 ) {
+                    count +=1;
+                    if ( count > max ){
+                        max = count;
+                    } 
+                } else {
+                count = 0;
+                }
+            }
+            return max;
+        }
+
+        // 呼叫 maxZeros 函式
+
+        maxZeros([0, 1, 0, 0]); // 得到 2
+        maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]); // 得到 4 
+        maxZeros([1, 1, 1, 1, 1]); // 得到 0 
+        maxZeros([0, 0, 0, 1, 1]) // 得到 3
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+</html>
