@@ -8,12 +8,10 @@ def calculate(min, max):
         sum += i
     return(sum)
 
-
 # 呼叫 calculate 函式
 
 calculate(1, 3)  # 你的程式要能夠計算 1+2+3，最後印出 6
 calculate(4, 8)  # 你的程式要能夠計算 4+5+6+7+8，最後印出 30
-
 
 # assignment 2
 
@@ -22,7 +20,6 @@ def avg(data):
   for i in range(data["count"]):
     sum += data["employees"][i]["salary"]
   return sum / data["count"]
-
 
 # 呼叫 avg 函式
 
@@ -34,7 +31,6 @@ avg({
 {"name":"Jenny","salary":50000}
 ]
 })  
-
 
 # assignment 3
 
@@ -54,7 +50,6 @@ maxProduct([-1, 2]) # 得到 -2
 maxProduct([-1, 0, 2]) # 得到 0 
 maxProduct([-1, -2, 0]) # 得到 2
 
-
 # assignment 4
 
 def twoSum(nums, target):
@@ -72,7 +67,6 @@ def twoSum(nums, target):
 result=twoSum([2, 11, 7, 15], 9)
 print(result) # show [0, 2] because nums[0]+nums[2] is 9
 
-
 # assignment 5
 
 def maxZeros(nums):
@@ -86,7 +80,6 @@ def maxZeros(nums):
     else:
         count = 0
   return max
-
 
 # 呼叫 maxZeros 函式
 
