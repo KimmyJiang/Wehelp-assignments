@@ -80,8 +80,8 @@
         function twoSum(nums, target){
             var sum = target;
             var element = [];
-            for (i=0 ; i < nums.length ; i ++ ){
-                for (j=i+1 ; j < nums.length ; j++){
+            for ( var i=0 ; i < nums.length ; i ++ ){
+                for (var j=i+1 ; j < nums.length ; j++){
                     if ( nums[i] + nums[j] == sum ){
                         element.push(i,j);
                         break;
@@ -101,7 +101,7 @@
         function maxZeros(nums){
             var count = 0 ;
             var max = 0 ;
-            for (i=0 ; i < nums.length ; i++ ){
+            for ( var i=0 ; i < nums.length ; i++ ){
                 if ( nums[i] == 0 ) {
                     count +=1;
                     if ( count > max ){
