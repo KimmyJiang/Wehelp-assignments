@@ -10,7 +10,10 @@ app.secret_key = "ertyhugf"
 #首頁
 @app.route("/")
 def index():
-    return render_template("index.html")
+    if session["status"] == "已登入":
+        return redirect("/member/") 
+    else:
+        return render_template("index.html")
 
 #帳密驗證頁面
 @app.route("/signin",methods=["POST"])
@@ -31,10 +34,10 @@ def signin():
 #登入成功頁面
 @app.route("/member/")
 def member():
-    if session["status"] == "未登入":
-        return redirect("/")
-    else:
+    if session["status"] == "已登入":
         return render_template("member.html")
+    else:
+        return redirect("/")
 
 #登入失敗頁面
 @app.route("/error/")
