@@ -2,12 +2,12 @@
 
 1. 使用 INSERT 指令新增一筆資料到 member 資料表中，這筆資料的 username 和 password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料。
 
-    ```
-    INSERT member(name,username,password,follower_count) VALUES ( "Kimmy","test","test","100");
-    INSERT member(name,username,password,follower_count) VALUES ( "Gina","gina1","ginap1","88");
-    INSERT member(name,username,password,follower_count) VALUES ( "Paul","paul54","paul083","234");
-    INSERT member(name,username,password,follower_count) VALUES ( "Wen","wen23593","wen0348","348");
-    INSERT member(name,username,password,follower_count) VALUES ( "Lisa","lisa24","lisa245824","9483");
+    ```sql
+    INSERT INTO member(name,username,password,follower_count) VALUES ( "Kimmy","test","test","100");
+    INSERT INTO member(name,username,password,follower_count) VALUES ( "Gina","gina1","ginap1","88");
+    INSERT INTO member(name,username,password,follower_count) VALUES ( "Paul","paul54","paul083","234");
+    INSERT INTO member(name,username,password,follower_count) VALUES ( "Wen","wen23593","wen0348","348");
+    INSERT INTO member(name,username,password,follower_count) VALUES ( "Lisa","lisa24","lisa245824","9483");
     ```
     
     <img width="950" alt="截圖 2022-01-27 下午5 53 33" src="https://user-images.githubusercontent.com/94777104/151335688-a6b05c58-5dfb-4db7-b023-ec1098a2c2cc.png">
@@ -16,7 +16,7 @@
 
 2. 使用 SELECT 指令取得所有在 member 資料表中的會員資料。
 
-    ```
+    ```sql
     SELECT * FROM member;
     ```
     
@@ -26,7 +26,7 @@
     
 3. 使用 SELECT 指令取得所有在 member 資料表中的會員資料，並按照 time 欄位，由近到遠排序。
 
-    ```
+    ```sql
     SELECT * FROM member ORDER BY time DESC;
     ```
     
@@ -36,7 +36,7 @@
     
  4. 使用 SELECT 指令取得 member 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。
 
-    ```
+    ```sql
     SELECT * FROM member ORDER BY time DESC LIMIT 1,3;
     ```
     
@@ -46,7 +46,7 @@
     
 5. 使用 SELECT 指令取得欄位 username 是 test 的會員資料。
 
-    ```
+    ```sql
     SELECT * FROM member WHERE username = "test";
     ```
     
@@ -56,7 +56,7 @@
   
 6. 使用 SELECT 指令取得欄位 username 是 test 且欄位 password 也是 test 的資料。
 
-    ```
+    ```sql
     SELECT * FROM member WHERE username = "test" AND password = "test";
     ```
     
@@ -66,7 +66,7 @@
     
 7. 使用 UPDATE 指令更新欄位 username 是 test 的會員資料，將資料中的 name 欄位改成 test2。
   
-    ```
+    ```sql
     UPDATE member SET name = "test2" WHERE username = "test";  
     ```
 
@@ -78,7 +78,7 @@
 
 1. 取得 member 資料表中，總共有幾筆資料（幾位會員）。
 
-    ```
+    ```sql
     SELECT COUNT(*) FROM member;
     ```
 
@@ -88,7 +88,7 @@
   
 2. 取得 member 資料表中，所有會員 follower_count 欄位的總和。
 
-    ```
+    ```sql
     SELECT SUM(follower_count) FROM member;
     ```
     
@@ -99,7 +99,7 @@
     
 3. 取得 member 資料表中，所有會員 follower_count 欄位的平均數。
 
-    ```
+    ```sql
     SELECT AVG(follower_count) FROM member;
     ```
     
@@ -112,7 +112,7 @@
 1. 在資料庫中，建立新資料表，取名字為 message 。
     * 建立資料表
     
-      ```
+      ```sql
       CREATE TABLE message (
       id BIGINT PRIMARY KEY AUTO_INCREMENT,
       member_id BIGINT NOT NULL,
@@ -127,11 +127,11 @@
     
     * 新增資料
     
-      ```
-      INSERT message ( member_id , content ) VALUES ( 1 , "大家早安");
-      INSERT message ( member_id , content ) VALUES ( 1 , "你有打疫苗了嗎？");
-      INSERT message ( member_id , content ) VALUES ( 2 , "晚餐要吃什麼？");
-      INSERT message ( member_id , content ) VALUES ( 4 , "新年快樂！");
+      ```sql
+      INSERT INTO message ( member_id , content ) VALUES ( 1 , "大家早安");
+      INSERT INTO message ( member_id , content ) VALUES ( 1 , "你有打疫苗了嗎？");
+      INSERT INTO message ( member_id , content ) VALUES ( 2 , "晚餐要吃什麼？");
+      INSERT INTO message ( member_id , content ) VALUES ( 4 , "新年快樂！");
       ```
       
       <img width="950" alt="截圖 2022-01-27 下午6 22 24" src="https://user-images.githubusercontent.com/94777104/151340355-b5508508-9935-4330-8be0-836672d850c7.png">
