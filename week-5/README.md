@@ -140,7 +140,7 @@
       
 2. 使用 SELECT 搭配 JOIN 語法，取得所有留言，結果須包含留言者會員的姓名。
 
-    ```
+    ```sql
     SELECT message.id, member.name , message.content, message.time 
     FROM message JOIN member ON message.member_id = member.id;
     ```
@@ -151,7 +151,7 @@
     
 3. 使用 SELECT 搭配 JOIN 語法，取得 member 資料表中欄位 username 是 test 的所有留言，資料中須包含留言者會員的姓名。
 
-   ```
+   ```sql
    SELECT message.id , member.name , message.content , message.time 
    FROM message JOIN member ON message.member_id = member.id
    WHERE member.username = "test";
