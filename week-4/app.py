@@ -10,6 +10,8 @@ app.secret_key = "ertyhugf"
 #首頁
 @app.route("/")
 def index():
+    status=session.get("status", "未登入")
+    
     if session["status"] == "已登入":
         return redirect("/member/") 
     else:
