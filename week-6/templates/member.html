@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>登入成功</title>
+
+        <style type="text/css">
+
+            body {
+                margin: 0px;
+                
+            }
+
+            .head {
+                height:200px;
+                background-color:rgb(210, 210, 210);
+                text-align: center;
+                font-size: 40px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            .content {
+                font-size: 35px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 50px;
+
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+        <div class="head">
+            歡迎光臨，這是會員頁
+        </div>
+
+        <div class="content">
+            {{user}}，歡迎登入系統
+        </div>
+        <div class="content">
+            <a href="/signout">登出系統</a>
+        </div>
+        
+
+            
+  
+
+    </body>
+</html>
