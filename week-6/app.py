@@ -41,21 +41,26 @@ def signup():
         info = "姓名、帳號、密碼不得空白"
         return redirect(f"/error/?message={info}")
         
-    check_user = f'''
+    ## 查詢帳號是否已被註冊
+    check_user = '''
     SELECT * 
     FROM member 
-    WHERE username = "{new_username}";
+    WHERE username = %s ;
     ''' 
-    cursor.execute(check_user)
-    result = cursor.fetchall()
+    cursor.execute(check_user, (new_username,))
+    result = cursor.fetchone()
 
-    if len(result) == 0:
-        add_user = f'''
+    if result == None :
+        add_user = '''
         INSERT INTO member(name, username, password)
-        VALUES ("{new_user}","{new_username}","{new_password}");
+        VALUES ( %s, %s, %s);
         '''
 
-        cursor.execute(add_user)
+        user_data = [
+            new_user, new_username, new_password
+        ]
+
+        cursor.execute(add_user,user_data)
         db.commit()
 
         return redirect("/")
@@ -74,18 +79,18 @@ def signin():
         info = "請輸入帳號、密碼"
         return redirect(f"/error/?message={info}")
 
-    verify_user = f'''
+    verify_user = '''
     SELECT name, username, password
     FROM member
-    WHERE username = "{username}";
+    WHERE username = %s ;
     ''' 
 
-    cursor.execute(verify_user)
-    verify_result = cursor.fetchall()
+    cursor.execute(verify_user,(username,))
+    verify_result = cursor.fetchone()
 
     try:
-        user = verify_result[0][0]
-        pswd = verify_result[0][2]
+        user = verify_result[0]
+        pswd = verify_result[2]
 
         if password != pswd:
             raise
