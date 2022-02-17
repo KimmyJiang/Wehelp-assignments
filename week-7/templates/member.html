@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>登入成功</title>
+        <link rel="stylesheet" href="/member.css" type="text/css">
+
+    </head>
+    <body>
+        <script src="/member.js"></script>
+
+        <header>
+            歡迎光臨，這是會員頁
+        </header>
+
+        <div class="content">
+            {{user}}，歡迎登入系統
+        </div>
+        <div class="content">
+            <a href="/signout">登出系統</a>
+        </div>
+
+        <div class="block">
+            <div class="head">查詢會員姓名</div>
+            <input type="text" id="query_member">
+            <button class="btn" onclick="javascript:get_data()">查詢</button>
+            <div id="query_result"></div>  
+        </div> 
+        
+        <div class="block">
+            <div class="head">更新我的姓名</div>
+            <input type="text" id="revise_name">
+            <button class="btn" onclick="javascript:update_name()">更新</button>
+            <div id="update_result"></div>
+        </div>
+
+    </body>
+</html>
